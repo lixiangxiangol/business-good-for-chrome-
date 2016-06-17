@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+<link href="CSS/main.css" rel="stylesheet">
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="JS/main.js"></script>
+</head>
+
+<body onload="load()">
+	<!--导航条-->
+    <nav class="navbar navbar-default" id="nav">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <img id="img_logo" src="images/logo.png">
+
+            <div id="code" onmouseover="code_over()" onmouseout="code_out()">
+                <span id="sp1"></span>
+                <div id="dis_code"><img src="images/code.jpg" alt="tupian"></div>
+                <i class="glyphicon glyphicon-qrcode btn-lg"></i><a>二维码</a></div>
+
+            <div id="message" onmouseover="mes_over()" onmouseout="mes_out()">
+                <span id="sp2"></span>
+                <div id="dis_message">
+                    <table class="table table-bordered">
+                        <tr class="active">
+                            <th>发送者</th>
+                            <th>内容简介</th>
+                            <th>时间</th>
+                        </tr>
+                        <tr class="active" data-placement="left" data-toggle="popover"
+                            title="发送者：刘超" data-content="12栋洗衣机坏了，请速来修理">
+                            <td>刘超</td>
+                            <td>洗衣机坏了</td>
+                            <td>2015-10-23</td>
+                        </tr>
+                        <tr class="active" data-placement="left" data-toggle="popover"
+                            title="发送者：王曹伟" data-content="12栋洗衣机坏了，请速来修理">
+                            <td>王曹伟</td>
+                            <td>洗衣机坏了</td>
+                            <td>2015-09-31</td>
+                        </tr>
+                        <tr class="active" data-placement="left" data-toggle="popover"
+                            title="发送者：王志华" data-content="7栋洗衣机太少，能不能增加洗衣机数量">
+                            <td>王志华</td>
+                            <td>洗衣机太少了</td>
+                            <td>2015-07-26</td>
+                        </tr>
+                        <tr class="active" data-placement="left" data-toggle="popover"
+                            title="发送者：张泽伟" data-content="1栋洗衣机坏了，请速来修理">
+                            <td>张泽伟</td>
+                            <td>洗衣机坏了</td>
+                            <td>2015-04-14</td>
+                        </tr>
+                    </table>
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">上一页</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">...</a></li>
+                            <li><a href="#">下一页</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <i class="glyphicon glyphicon-envelope btn-lg"></i><a>消息</a></div>
+
+            <div id="user">
+                <img id="top_img" src="images/nologin.png" onmouseover="over()" onmouseout="out()">
+                <a>张海</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container container-fluid ad-gallery" style="margin-top: 3.4%;height: 82%">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height: 100%">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox" style="height: 100%">
+            <div class="item active" style="height: 100%">
+              <img src="images/1.png" alt="" style="height: 100%">
+              <div class="carousel-caption">
+                
+              </div>
+            </div>
+            
+            <div class="item" style="height: 100%">
+              <img src="images/2.png" alt="" style="height: 100%">
+              <div class="carousel-caption">
+                
+              </div>
+            </div>
+            
+            <div class="item" style="height: 100%">
+              <img src="images/3.png" alt="" style="height: 100%">
+              <div class="carousel-caption">
+                
+              </div>
+            </div>
+            
+            <div class="item" style="height: 100%">
+              <img src="images/4.png" alt="" style="height: 100%">
+              <div class="carousel-caption">
+                
+              </div>
+            </div>
+            
+          </div>
+        
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          
+          <div class="login-container col-md-3">
+          
+          	<div role="tabpanel">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">帐号登陆</a></li>
+                <li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab">手机号登陆</a></li>
+                <li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab">邮箱登陆</a></li>
+              </ul>
+            
+              <!-- Tab panes -->
+              <div class="tab-content">
+              
+                <div role="tabpanel" class="tab-pane active" id="account">
+                	<form style="margin:10%">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="loginAccount" placeholder="账号">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" id="loginPassword" placeholder="密码">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="loginCode" style="width:40%;display: inline" placeholder="验证码">
+                          <img src="images/code.png" alt="" style="height: 34px;margin-left: 10%"/>
+                        </div>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox">记住密码
+                          </label>
+                        </div>
+                        <button onclick="click()" type="submit" class="btn btn-info col-md-12" style="margin-bottom:10%">登陆</button>
+                    </form>
+                </div>
+                
+                <div role="tabpanel" class="tab-pane" id="phone">
+                	<form style="margin:10%">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="loginPhone" placeholder="手机号">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" id="loginPassword" placeholder="密码">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="loginCode" style="width:40%;display: inline" placeholder="验证码">
+                            <img src="images/code.png" alt="" style="height: 34px;margin-left: 10%"/>
+                        </div>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox">记住密码
+                          </label>
+                        </div>
+                        <button onclick="click()" type="submit" class="btn btn-info col-md-12" style="margin-bottom:10%">登陆</button>
+                    </form>
+                </div>
+                
+                <div role="tabpanel" class="tab-pane" id="mail">
+                	<form style="margin:10%">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="loginMail" placeholder="邮箱">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" id="loginPassword" placeholder="密码">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="loginCode" style="width:40%;display: inline" placeholder="验证码">
+                            <img src="images/code.png" alt="" style="height: 34px;margin-left: 10%"/>
+                        </div>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox">记住密码
+                          </label>
+                        </div>
+                        <button onclick="click()" type="submit" class="btn btn-info col-md-12" style="margin-bottom:10%">登陆</button>
+                      </form>
+                </div>
+              </div>
+            
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+    <div class="container container-fluid" id="middle">
+        <div class="col-md-1 col-md-offset-2" id="fixed"><a href="#">实时新闻：</a></div>
+        <div class="col-md-9" id="div1">
+                <a href="javascript:" _fcksavedurl="javascript:">精灵平台发布</br></a>
+                <a href="javascript:" _fcksavedurl="javascript:">海尔洗衣机热卖中</br></a>
+                <a href="javascript:" _fcksavedurl="javascript:">海尔洗衣机全面降价</br></a>
+                <a href="javascript:" _fcksavedurl="javascript:">海尔最受用户信赖</br></a>
+                <a href="javascript:" _fcksavedurl="javascript:">精灵公司正式上市</br></a>
+                <a href="javascript:" _fcksavedurl="javascript:">精灵公司正在广纳贤才</br></a>
+                <a href="javascript:" _fcksavedurl="javascript:">海尔正在研发更加智能的家电</br></a>
+                <a href="javascript:" _fcksavedurl="javascript:">谁能撼动海尔的家电王者地位</br></a>
+         </div>
+    </div>
+
+    <!--页脚-->
+   <div class="container-fluid" id="bottom">
+            <div class="col-md-offset-1 col-md-3" id="bottom-equity">
+                <a href="#">法律声明</a><span>|</span>
+                <a href="#">隐私保护</a><span>|</span>
+                <a href="#">联系我们</a><span>|</span>
+                <a href="#">网站地图</a>
+            </div>
+
+            <div class="col-md-6" id="state">
+                版权所有 © 精灵技术有限公司 1998-2014。 保留一切权利。<a href="#">粤A2-20044005号</a>
+            </div>
+
+        <div class="col-md-offset-1 col-md-1" id="bottom-image">
+            <a href="#"><img src="images/image-bottom.png"/></a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function code_over(){
+        $('#sp1').css('display','block');
+        $('#dis_code').css('display','block');
+    }
+    function code_out(){
+        $('#sp1').css('display','none');
+        $('#dis_code').css('display','none');
+    }
+    function click(){
+
+    }
+
+    $('#carousel-example-generic').carousel({ interval: 2000});
+    window._bd_share_config = {
+        common : {
+            //此处放置通用设置
+            bdText : '掌上洗衣',
+            bdDesc : '内容',
+            bdUrl : 'http://www.baidu.com',
+            bdPic : ''
+        },
+        share : [
+            //此处放置分享按钮设置
+            /*            {
+             'tag':'share_1',
+             'bdSize':32
+             },*/
+            {
+                'tag':'share_2',
+                'bdSize':16
+            }
+        ],
+        slide : [
+            //此处放置浮窗分享设置
+            {
+                bdImg:2,
+                bdPos:'right',
+                bdTop:350
+            }
+        ]
+    };
+    //以下为js加载部分
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+</html>

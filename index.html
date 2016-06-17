@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="CSS/style.css">
+    <link href="CSS/bootstrap-select.min.css" rel="stylesheet" media="screen"/>
+    <link rel="stylesheet" href="CSS/bootstrap-responsive.min.css"/>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <title>CSS3</title>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+    function over(){
+        var top_img=document.getElementById('top_img');
+        top_img.src='images/my.png';
+    }
+    function out(){
+        var top_img=document.getElementById('top_img');
+        top_img.src='images/mys.png';
+    }
+    function code_over(){
+        $('#sp1').css('display','block');
+        $('#dis_code').css('display','block');
+    }
+    function code_out(){
+        $('#sp1').css('display','none');
+        $('#dis_code').css('display','none');
+     }
+    function mes_over(){
+        $('#sp2').css('display','block');
+        $('#dis_message').css('display','block');
+    }
+    function mes_out(){
+        $('#sp2').css('display','none');
+        $('#dis_message').css('display','none');
+    }
+    function change(){
+        if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test($('#td6').text()))){
+            alert("不是完整的11位手机号或者正确的手机号前七位");
+        }
+        else if(!(/^[0-9]{16,19}$/.test($('#td10').text()))){
+            alert("不是完整的银行卡号或者正确的银行卡号");
+        }
+        else if(!(/^\d*([\u4e00-\u9fa5]|[a-zA-Z])+\d*$/.test($('#td8').text()))){
+            window.alert("不是正确的地址信息");
+        }
+        else{
+            alert('ok');
+        }
+    }
+</script>
+</head>
+<body>
+
+<nav class="navbar navbar-default" id="nav">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <img id="img_logo" src="images/logo.png">
+
+        <div id="code" onmouseover="code_over()" onmouseout="code_out()">
+        <span id="sp1"></span>
+        <div id="dis_code"><img src="images/code.jpg"></div>
+        <i class="glyphicon glyphicon-qrcode btn-lg"></i><a>二维码</a></div>
+
+        <div id="message" onmouseover="mes_over()" onmouseout="mes_out()">
+        <span id="sp2"></span>
+        <div id="dis_message">
+            <table class="table table-bordered">
+                <tr class="active">
+                    <th>发送者</th>
+                    <th>内容简介</th>
+                    <th>时间</th>
+                </tr>
+                <tr class="active" data-placement="left" data-toggle="popover"
+                    title="发送者：刘超" data-content="12栋洗衣机坏了，请速来修理">
+                    <td>刘超</td>
+                    <td>洗衣机坏了</td>
+                    <td>2015-10-23</td>
+                </tr>
+                <tr class="active" data-placement="left" data-toggle="popover"
+                    title="发送者：王曹伟" data-content="12栋洗衣机坏了，请速来修理">
+                    <td>王曹伟</td>
+                    <td>洗衣机坏了</td>
+                    <td>2015-09-31</td>
+                </tr>
+                <tr class="active" data-placement="left" data-toggle="popover"
+                    title="发送者：王志华" data-content="7栋洗衣机太少，能不能增加洗衣机数量">
+                    <td>王志华</td>
+                    <td>洗衣机太少了</td>
+                    <td>2015-07-26</td>
+                </tr>
+                <tr class="active" data-placement="left" data-toggle="popover"
+                    title="发送者：张泽伟" data-content="1栋洗衣机坏了，请速来修理">
+                    <td>张泽伟</td>
+                    <td>洗衣机坏了</td>
+                    <td>2015-04-14</td>
+                </tr>
+            </table>
+            <nav>
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">上一页</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">下一页</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <i class="glyphicon glyphicon-envelope btn-lg"></i><a>消息</a></div>
+
+        <div id="user">
+            <img id="top_img" src="images/mys.png" onmouseover="over()" onmouseout="out()">
+            <a>张海</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="st-container">
+        <div id="dis"></div>
+        <input type="radio" name="radio-set" checked id="st-control-1">
+        <a href="#st-panel-1" style="text-decoration: none"><i class="glyphicon glyphicon-signal"><span>报表一览</span></i></a>
+        <input type="radio" name="radio-set" id="st-control-2">
+        <a href="#st-panel-2" style="text-decoration: none"><i class="glyphicon glyphicon-user"><span>个人中心</span></i></a>
+        <input type="radio" name="radio-set" id="st-control-3">
+        <a href="#st-panel-3" style="text-decoration: none"><i class="glyphicon glyphicon-cog"><span>洗衣机管理</span></i></a>
+        <input type="radio" name="radio-set" id="st-control-4">
+        <a href="#st-panel-4" style="text-decoration: none"><i class="glyphicon glyphicon-shopping-cart"><span>购买洗衣机</span></i></a>
+        <input type="radio" name="radio-set" id="st-control-5">
+        <a href="#st-panel-5" style="text-decoration: none"><i class="glyphicon glyphicon-map-marker"><span>商家一览</span></i></a>
+        <div class="st-scroll">
+            <section class="st-panel" id="st-panel-1">
+                <form class="form-horizontal" method="GET" name="form">
+                    <select id="s1" name="s_university" class="selectpicker show-menu-arrow" onchange="c1()"
+                            data-size="3" title="学校" data-live-search="true" data-style="btn-info">
+                        <option id="s1_op1">A大学</option>
+                        <option id="s1_op2">B大学</option>
+                        <option id="s1_op3">C大学</option>
+                        <option id="s1_op4">D学院</option>
+                    </select>
+                    <select id="s2" name="s_room" class="selectpicker show-menu-arrow" onchange="c2()"
+                            data-size="3" title="宿舍" data-live-search="true" data-style="btn-info">
+                    </select>
+                    <select id="s3" name="s_number" class="selectpicker show-menu-arrow" onchange="c3()"
+                            data-size="3" title="洗衣机" data-live-search="true" data-style="btn-info">
+                    </select>
+                    <select id="s4" name="s_day" class="selectpicker show-menu-arrow" onchange="c4()"
+                            data-size="3" title="时间分类" data-live-search="true" data-style="btn-info">
+                        <option id="s4_op1">当日查询</option>
+                        <option id="s4_op2">当周查询</option>
+                        <option id="s4_op3">当月查询</option>
+                        <option id="s4_op4">当年查询</option>
+                    </select>
+                    <select onchange="c5()" id="s5" name="s_type" class="selectpicker show-menu-arrow"
+                            data-size="3" title="报表选择" data-live-search="true" data-style="btn-info">
+                        <option id="s5_op1">洗衣次数</option>
+                        <option id="s5_op2">收支情况</option>
+                        <option id="s5_op3">损坏次数</option>
+                    </select>
+                </form>
+                <iframe id="if" style="margin-top: 12%;width: 100%;height: 75%" scrolling="no" frameborder="false" src="chart1.html"></iframe>
+            </section>
+
+            <section class="st-panel" id="st-panel-2">
+                <img src="images/bg.png" id="img_bg">
+                <img src="images/touxiang.png" id="img_touxiang">
+                <span>活动金额：4000元</span>
+                <div id="div_form">
+                    <form>
+                        <table>
+                            <tr>
+                                <td style="width: 10%">账号：</td>
+                                <td style="width: 57.5%" id="td1">9090900</td>
+
+                                <td style="width: 12%">身份证号：</td>
+                                <td id="td2">510129199305310053</td>
+                            </tr>
+                            <tr>
+                                <td>姓名：</td>
+                                <td id="td3">张海</td>
+
+                                <td>注册时间：</td>
+                                <td id="td4">2015-6-13</td>
+                            </tr>
+                            <tr>
+                                <td>性别：</td>
+                                <td id="td5">女</td>
+
+                                <td>手机号：</td>
+                                <td data-toggle="tooltip" data-placement="right" title="可修改" contenteditable="true" id="td6">13507835975</td>
+                            </tr>
+                            <tr>
+                                <td>提成比例：</td>
+                                <td id="td7">0.001</td>
+
+                                <td>地址：</td>
+                                <td data-toggle="tooltip" data-placement="right" title="可修改" id="td8" contenteditable="true">四川省A大学12栋</td>
+                            </tr>
+                            <tr>
+                                <td>邮箱：</td>
+                                <td id="td9">389753982@qq.com</td>
+
+                                <td>转账账号：</td>
+                                <td data-toggle="tooltip" data-placement="right" title="可修改" id="td10" contenteditable="true">612617810000168434</td>
+                            </tr>
+                        </table>
+                        <button onclick="change()" class="btn btn-info col-md-2 col-md-offset-2">提交</button>
+                        <button class="btn btn-info col-md-2 col-md-offset-2">取消</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="st-panel" id="st-panel-3" style="height: 100%">
+                <iframe id="ifr" src="demo4.html" scrolling="no" frameborder="false" style="height: 100%"></iframe>
+                <div class="right" id="say">
+                    <ul>
+                        <li><img src="images/washer_green.png"><span>空闲洗衣机</span></li>
+                        <li style="margin-top: 3%"><img src="images/washer_yellow.png"><span>工作洗衣机</span></li>
+                        <li style="margin-top: 3%"><img src="images/washer_red.png"><span>故障洗衣机</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="st-panel" id="st-panel-4">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" style="width: 100%;height: 50%" role="listbox">
+                        <div class="item active">
+                            <img style="width: 100%;height: 50%" src="images/1.png" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="images/2.png" style="width: 100%;height: 50%" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="images/3.png" style="width: 100%;height: 50%" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="images/4.png" style="width: 100%;height: 50%" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="images/5.png" style="width: 100%;height: 50%" alt="...">
+                        </div>
+                        <div class="item">
+                            <img src="images/6.png" style="width: 100%;height: 50%" alt="...">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <img src="images/p1.png" id="img1">
+                <img src="images/p2.png" id="img2">
+                <img src="images/p3.png" id="img3">
+                <img src="images/p4.png" id="img4">
+                <a id="a1">变频冰箱</a>
+                <a id="a2">智能洗衣机</a>
+                <a id="a3">4K神器</a>
+                <a id="a4">空调盛宴</a>
+            </section>
+
+            <section class="st-panel" id="st-panel-5">
+                <div style="width:100%;height:82%;margin-top:6.2%;border:#ccc solid 1px;" id="dituContent"></div>
+            </section>
+        </div>
+    </div>
+
+</div>
+
+<div class="bdsharebuttonbox" data-tag="share_1">
+    <a class="bds_mshare" data-cmd="mshare"></a>
+    <a class="bds_qzone" data-cmd="qzone" href="#"></a>
+    <a class="bds_tsina" data-cmd="tsina"></a>
+    <a class="bds_baidu" data-cmd="baidu"></a>
+    <a class="bds_renren" data-cmd="renren"></a>
+    <a class="bds_tqq" data-cmd="tqq"></a>
+    <a class="bds_count" data-cmd="count"></a>
+</div>
+
+<footer>
+    <div id="word">
+        <a>关于我们</a>
+        <i>|</i>
+        <a>常见问题</a>
+        <i>|</i>
+        <a>意见反馈</a>
+        <i>|</i>
+        <a>联系我们</a>
+        <i>|</i>
+        <a>官方微博</a>
+    </div>
+</footer>
+</body>
+<script src="JS/select2.min.js"></script>
+<script type="text/javascript" src="JS/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<script type="text/javascript">
+    var d_room=['1栋','2栋','3栋','4栋','5栋','6栋','7栋','8栋','9栋'];
+    var d_number=['一号洗衣机','二号洗衣机','三号洗衣机','四号洗衣机','五号洗衣机','六号洗衣机',
+        '七号洗衣机','八号洗衣机','九号洗衣机','十号洗衣机','十一号洗衣机','十二号洗衣机'];
+
+    function c1(){
+        var s1=document.getElementById('s1');
+        if(s1.options[s1.selectedIndex].id=='s1_op1'){
+            $('#s2').find('option').remove();
+            for(var i1=0;i1<d_room.length;i1++){
+                $('#s2').append("<option id=s2_op"+i1+">"+d_room[i1]+"</option>");
+            }
+            $('#s2').selectpicker('refresh');
+        }
+        if(s1.options[s1.selectedIndex].id=='s1_op2'){
+            $('#s2').find('option').remove();
+            for(var i2=0;i2<d_room.length;i2++){
+                $('#s2').append("<option id=s2_op"+i2+">"+d_room[i2]+"</option>");
+            }
+            $('#s2').selectpicker('refresh');
+        }
+        if(s1.options[s1.selectedIndex].id=='s1_op3'){
+            $('#s2').find('option').remove();
+            for(var i3=0;i3<d_room.length;i3++){
+                $('#s2').append("<option id=s2_op"+i3+">"+d_room[i3]+"</option>");
+            }
+            $('#s2').selectpicker('refresh');
+        }
+        if(s1.options[s1.selectedIndex].id=='s1_op4'){
+            $('#s2').find('option').remove();
+            for(var i4=0;i4<d_room.length;i4++){
+                $('#s2').append("<option id=s2_op"+i4+">"+d_room[i4]+"</option>");
+            }
+            $('#s2').selectpicker('refresh');
+        }
+    }
+
+    function c2(){
+        var s2=document.getElementById('s2');
+        if(s2.options[s2.selectedIndex].id=='s2_op1'){
+            $('#s3').find('option').remove();
+            for(var ii1=0;ii1<d_number.length;ii1++){
+                $('#s3').append("<option class=s3_op"+ii1+">"+d_number[ii1]+"</option>");
+            }
+            $('#s3').selectpicker('refresh');
+        }
+        if(s2.options[s2.selectedIndex].id=='s2_op2'){
+            $('#s3').find('option').remove();
+            for(var ii2=0;ii2<d_number.length;ii2++){
+                $('#s3').append("<option class=s3_op"+ii2+">"+d_number[ii2]+"</option>");
+            }
+            $('#s3').selectpicker('refresh');
+        }
+        if(s2.options[s2.selectedIndex].id=='s2_op3'){
+            $('#s3').find('option').remove();
+            for(var ii3=0;ii3<d_number.length;ii3++){
+                $('#s3').append("<option class=s3_op"+ii3+">"+d_number[ii3]+"</option>");
+            }
+            $('#s3').selectpicker('refresh');
+        }
+        if(s2.options[s2.selectedIndex].id=='s2_op4'){
+            $('#s3').find('option').remove();
+            for(var ii4=0;ii4<d_number.length;ii4++){
+                $('#s3').append("<option class=s3_op"+ii4+">"+d_number[ii4]+"</option>");
+            }
+            $('#s3').selectpicker('refresh');
+        }
+        if(s2.options[s2.selectedIndex].id=='s2_op5'){
+            $('#s3').find('option').remove();
+            for(var ii5=0;ii5<d_number.length;ii5++){
+                $('#s3').append("<option class=s3_op"+ii5+">"+d_number[ii5]+"</option>");
+            }
+            $('#s3').selectpicker('refresh');
+        }
+        if(s2.options[s2.selectedIndex].id=='s2_op6'){
+            $('#s3').find('option').remove();
+            for(var ii6=0;ii6<d_number.length;ii6++){
+                $('#s3').append("<option class=s3_op"+ii6+">"+d_number[ii6]+"</option>");
+            }
+            $('#s3').selectpicker('refresh');
+        }
+        if(s2.options[s2.selectedIndex].id=='s2_op7'){
+            $('#s3').find('option').remove();
+            for(var ii7=0;ii7<d_number.length;ii7++){
+                $('#s3').append("<option class=s3_op"+ii7+">"+d_number[ii7]+"</option>");
+            }
+            $('#s3').selectpicker('refresh');
+        }
+        if(s2.options[s2.selectedIndex].id=='s2_op8'){
+            $('#s3').find('option').remove();
+            for(var ii8=0;ii8<d_number.length;ii8++){
+                $('#s3').append("<option class=s3_op"+ii8+">"+d_number[ii8]+"</option>");
+            }
+            $('#s3').selectpicker('refresh');
+        }
+        if(s2.options[s2.selectedIndex].id=='s2_op9'){
+            $('#s3').find('option').remove();
+            for(var ii9=0;ii9<d_number.length;ii9++){
+                $('#s3').append("<option class=s3_op"+ii9+">"+d_number[ii9]+"</option>");
+            }
+            $('#s3').selectpicker('refresh');
+        }
+     }
+    function c5(){
+        var select=document.getElementById('s5');
+        var select1=document.getElementById('s4');
+        var ifs=document.getElementById('if');
+        if(select.options[select.selectedIndex].id=='s5_op1'){
+            if(select1.options[select1.selectedIndex].id=='s4_op4') {
+                ifs.src = 'chart1.html';
+            }
+            else if(select1.options[select1.selectedIndex].id=='s4_op3'){
+                ifs.src = 'chart4.html';
+            }
+        }
+        else if(select.options[select.selectedIndex].id=='s5_op2'){
+            if(select1.options[select1.selectedIndex].id=='s4_op4') {
+                ifs.src = 'chart2.html';
+            }
+            else if(select1.options[select1.selectedIndex].id=='s5_op3'){
+                ifs.src = 'chart5.html';
+            }
+        }
+        else{
+            ifs.src='chart3.html';
+        }
+    }
+    $('#carousel-example-generic').carousel({ interval: 2000});
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(104.1947,30.65545);//定义一个中心点坐标
+        map.centerAndZoom(point,13);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        map.addControl(ctrl_sca);
+    }
+
+    //标注点数组
+    var markerArr = [
+        {title:"成都大学",content:"成都市外东十陵镇上街1号	",point:"104.191619|30.654891",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},
+        {title:"成都中医药大学",content:"柳台大道西段1166号",point:"103.814046|30.692435",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},
+        {title:"四川农业大学(成都校区)",content:"四川省成都市温江区惠民路211号",point:"103.868541|30.711462",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},
+        {title:"成都中医药大学人民南路校区",content:"武侯区人民南路四段15号",point:"104.073464|30.63238",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},
+        {title:"成都广播电视大学",content:"大石西路56号",point:"104.038721|30.657454",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},
+        {title:"四川师范大学",content:"四川师范大学(成龙大道) 附近",point:"104.207762|30.571588",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},
+        {title:"西南石油大学（成都校区）",content:"新都大道8号",point:"104.190488|30.831667",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},
+        {title:"成都理工大学",content:"三环以内二仙桥东三路1号	",point:"104.150675|30.679034",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},
+        {title:"四川大学(望江校区)",content:"成都市武侯区科华北路和一环路",point:"104.089408|30.636986",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point/*,{icon:iconImg}*/);
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor:"#808080",
+                color:"red",
+                cursor:"pointer"
+            });
+
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+
+    initMap();//创建和初始化地图
+    window.onload = function () {
+        setInterval(function () {
+            document.getElementById("timer").innerHTML = (new Date()).toLocaleTimeString();
+        }, 1000);
+    };
+
+    window._bd_share_config = {
+        common : {
+            //此处放置通用设置
+            bdText : '掌上洗衣',
+            bdDesc : '内容',
+            bdUrl : 'http://www.baidu.com',
+            bdPic : ''
+        },
+        share : [
+            //此处放置分享按钮设置
+            /*            {
+             'tag':'share_1',
+             'bdSize':32
+             },*/
+            {
+                'tag':'share_2',
+                'bdSize':16
+            }
+        ],
+        slide : [
+            //此处放置浮窗分享设置
+            {
+                bdImg:2,
+                bdPos:'right',
+                bdTop:350
+            }
+        ]
+    };
+    //以下为js加载部分
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+</html>
